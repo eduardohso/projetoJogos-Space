@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Video;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class PlayerScript : MonoBehaviour
     public float shootSpeed=20;
     public float shootCD=.5f;
     float shootTimer=0;
+
+    public int hp=10;
+    public int maxHP=10;
 
     void Start(){
 
@@ -39,12 +43,25 @@ public class PlayerScript : MonoBehaviour
 
       transform.Translate(new Vector3(hMove, vMove).normalized*speed*Time.deltaTime);
 
-      if(transform.position.x > screenLimit.x)transform.position = new Vector3(-screenLimit.x + .2f, transform.position.y);
+      if(transform.position.x > screenLimit.x)transform.position = new Vector3(screenLimit.x, transform.position.y);
 
-      if(transform.position.x < -screenLimit.x)transform.position = new Vector3(screenLimit.x - .2f, transform.position.y);
+      if(transform.position.x < -screenLimit.x)transform.position = new Vector3(-screenLimit.x, transform.position.y);
 
       if(transform.position.y > screenLimit.y)transform.position = new Vector3(transform.position.x, -screenLimit.y + .2f);
 
       if(transform.position.y < -screenLimit.y)transform.position = new Vector3(transform.position.x, screenLimit.y - +.2f);
+    }
+
+    public void TakeDamage(int damage=1){
+      if(damage<0) return;
+      if(hp-damage>0) hp -= damage;
+      else{
+        hp=0;
+        Die();
+      }
+    }
+    void Die(){
+      hp=maxHP;
+      transform.position = Vector2.zero;
     }
 }
