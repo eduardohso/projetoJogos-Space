@@ -21,9 +21,9 @@ projetoJogos-Space/
 ├── Assets/              # Recursos do jogo (sprites, áudio, prefabs, etc.)
 ├── Packages/            # Dependências do projeto
 ├── ProjectSettings/     # Configurações do Unity
+├── build-Parte1/        # Primeira build do projeto
 ├── .gitignore           # Arquivos ignorados pelo Git
-├── README.md            # Este documento
-└── projetoJogos-Space.sln    # Solução do Unity
+└── README.md            # Este documento
 ```
 
 ## Como Executar o Projeto
