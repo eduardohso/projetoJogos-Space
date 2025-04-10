@@ -15,6 +15,8 @@ public class EnemyScript : MonoBehaviour
 
     int hp=5;
     public int maxHP=10;
+    public GameObject explosion;
+		public int scoreBonus = 20;
     
     void Start()
     {
@@ -46,7 +48,7 @@ public class EnemyScript : MonoBehaviour
             shootTimer=0;
         }
     }
-        public void TakeDamage(int damage=1){
+    public void TakeDamage(int damage=1){
       if(damage<0) return;
       if(hp-damage>0) hp -= damage;
       else{
@@ -55,7 +57,17 @@ public class EnemyScript : MonoBehaviour
       }
     }
     void Die(){
+      if(explosion != null) Instantiate(explosion, transform.position, Quaternion.identity);
+
+			try{
+				FindFirstObjectByType<PlayerScript>().AddScore(scoreBonus);
+			}
+			catch{
+
+			}
+
       hp=maxHP;
       transform.position = Vector2.zero;
+      transform.position = new Vector2(screenLimit.x, transform.position.y);
     }
 }

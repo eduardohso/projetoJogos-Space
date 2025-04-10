@@ -114,6 +114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: 2
+  explosion: {fileID: 4870528036036404201, guid: e1e7c1a78ebd78748b1ffe9f81601a4d, type: 3}
 --- !u!82 &7913658487918981359
 AudioSource:
   m_ObjectHideFlags: 0
