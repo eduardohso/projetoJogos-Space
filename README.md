@@ -22,6 +22,9 @@ projetoJogos-Space/
 ├── Packages/            # Dependências do projeto
 ├── ProjectSettings/     # Configurações do Unity
 ├── build-Parte1/        # Primeira build do projeto
+├── build-Parte2/        # Segunda build entregue
+├── build-Parte3/        # Terceira build entregue 
+├── build-Parte4/        # Quarta build entregue
 ├── .gitignore           # Arquivos ignorados pelo Git
 └── README.md            # Este documento
 ```
